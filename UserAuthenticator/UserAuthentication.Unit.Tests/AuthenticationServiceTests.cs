@@ -13,7 +13,8 @@ namespace UserAuthentication.Tests
         [ClassInitialize]
         public static void SetUp(TestContext context)
         {
-            service = new AuthenticationService();
+            var fileStore = new AuthenticationDetailsStoreFile(@"C:\StoreFolder");
+            service = new AuthenticationService(fileStore);
             details = new AuthenticationDetails { Email = "a@b.com", Password = "let-me-in" };
         }
 

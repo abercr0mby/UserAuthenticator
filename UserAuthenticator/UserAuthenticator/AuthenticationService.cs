@@ -14,10 +14,12 @@
             this.Store = storeFile;
         }
 
+#if NET461
         internal AuthenticationService(AuthenticationDetailsStoreDatabase storeDB)
         {
             this.Store = storeDB;
         }
+#endif
 
         private IAuthenticationDetailsStore Store { get; }
 

@@ -13,12 +13,13 @@ namespace UserAuthentication
             return new AuthenticationService(fileStore);
         }
 
+#if NET461
         public static AuthenticationService GetAuthenticationServiceDB()
         {
             var dbStore = new AuthenticationDetailsStoreDB();
 
             return new AuthenticationService(dbStore);
         }
-
+#endif
     }
 }
