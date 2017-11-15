@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-    using UserAuthentication.Messages;
+    using UserAuthentication.Core;
 
     public sealed class AuthenticationDetailsStoreDatabase : IAuthenticationDetailsStore
     {

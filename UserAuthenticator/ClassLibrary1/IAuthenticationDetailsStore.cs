@@ -1,4 +1,4 @@
-﻿namespace UserAuthentication.Messages
+﻿namespace UserAuthentication.Core
 {
     public interface IAuthenticationDetailsStore
     {

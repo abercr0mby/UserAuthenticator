@@ -7,6 +7,8 @@ using System.Text;
 
 namespace UserAuthentication
 {
+    using UserAuthentication.Store.File;
+
     public class AuthenticationServiceFactory
     {
         public static AuthenticationService GetAuthenticationServiceFile(string path = @"C:\StoreFolder\")

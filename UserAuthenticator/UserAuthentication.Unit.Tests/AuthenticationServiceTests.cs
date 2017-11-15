@@ -1,7 +1,8 @@
 namespace UserAuthentication.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using UserAuthentication.Messages;
+    using UserAuthentication.Core;
+    using UserAuthentication.Store.File;
 
     [TestClass]
     public sealed class AuthenticationServiceTests

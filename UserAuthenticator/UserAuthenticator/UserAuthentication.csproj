@@ -6,12 +6,14 @@
     <RootNamespace>UserAuthentication</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Messages.csproj" />
-  </ItemGroup>
-
   <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <ProjectReference Include="..\UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Core.csproj" />
+    <ProjectReference Include="..\UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj" />
+    <ProjectReference Include="..\UserAuthentication.Store.File\UserAuthentication.Store.File.csproj" />
   </ItemGroup>
 
 </Project>

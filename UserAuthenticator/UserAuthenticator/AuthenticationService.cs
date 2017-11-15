@@ -4,7 +4,9 @@
     using System.Security.Cryptography;
     using System.Text;
     using System.Text.RegularExpressions;
-    using UserAuthentication.Messages;
+    using UserAuthentication.Core;
+    using UserAuthentication.Store.File;
+
 #if NET461
     using UserAuthentication.Store.Database;
 #endif
@@ -17,9 +19,9 @@
         }
 
 #if NET461
-        internal AuthenticationService(AuthenticationDetailsStoreDatabase storeDB)
+        internal AuthenticationService(AuthenticationDetailsStoreDatabase storeDb)
         {
-            this.Store = storeDB;
+            this.Store = storeDb;
         }
 #endif
 

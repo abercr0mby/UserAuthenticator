@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Messages.csproj">
+    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Core.csproj">
       <Project>{d8513d86-d4ac-4da5-a850-f0df78d8158c}</Project>
-      <Name>UserAuthentication.Messages</Name>
+      <Name>UserAuthentication.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj">
       <Project>{60f4a72b-c2d2-45b4-a491-0d0a8f2e9b37}</Project>

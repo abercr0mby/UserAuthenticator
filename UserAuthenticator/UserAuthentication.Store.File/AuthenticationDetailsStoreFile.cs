@@ -1,8 +1,8 @@
-﻿namespace UserAuthentication
+﻿namespace UserAuthentication.Store.File
 {
     using System.IO;
     using System.Text;
-    using UserAuthentication.Messages;
+    using UserAuthentication.Core;
 
     public sealed class AuthenticationDetailsStoreFile : IAuthenticationDetailsStore
     {

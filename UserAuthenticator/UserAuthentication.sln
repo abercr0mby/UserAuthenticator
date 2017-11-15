@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Tests", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Store.Database", "UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj", "{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Messages", "ClassLibrary1\UserAuthentication.Messages.csproj", "{D8513D86-D4AC-4DA5-A850-F0DF78D8158C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Core", "ClassLibrary1\UserAuthentication.Core.csproj", "{D8513D86-D4AC-4DA5-A850-F0DF78D8158C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{0D49EBBA-B135-4322-A9AA-9DB424B0FF4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Store.File", "UserAuthentication.Store.File\UserAuthentication.Store.File.csproj", "{3E16FC64-B738-40B0-ABF6-2C9A401242D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{0D49EBBA-B135-4322-A9AA-9DB424B0FF4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D49EBBA-B135-4322-A9AA-9DB424B0FF4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D49EBBA-B135-4322-A9AA-9DB424B0FF4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E16FC64-B738-40B0-ABF6-2C9A401242D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E16FC64-B738-40B0-ABF6-2C9A401242D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E16FC64-B738-40B0-ABF6-2C9A401242D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E16FC64-B738-40B0-ABF6-2C9A401242D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
