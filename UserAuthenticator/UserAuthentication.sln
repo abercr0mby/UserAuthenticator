@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication", "UserA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp2", "ConsoleApp2\ConsoleApp2.csproj", "{6D0D9174-A590-4648-B131-28EF87248F76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Unit.Tests", "UserAuthentication.Unit.Tests\UserAuthentication.Unit.Tests.csproj", "{99C6F4ED-B02B-4BB4-A419-887CB3BCB710}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Tests", "UserAuthentication.Unit.Tests\UserAuthentication.Tests.csproj", "{99C6F4ED-B02B-4BB4-A419-887CB3BCB710}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Store.Database", "UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj", "{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}"
 EndProject
