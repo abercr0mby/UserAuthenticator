@@ -5,29 +5,17 @@
     using System.Text;
     using System.Text.RegularExpressions;
     using UserAuthentication.Core;
-    using UserAuthentication.Store.File;
-
-#if NET461
-    using UserAuthentication.Store.Database;
-#endif
 
     public sealed class AuthenticationService
     {
-        internal AuthenticationService(AuthenticationDetailsStoreFile storeFile)
+        internal AuthenticationService(IAuthenticationDetailsStore storeFile)
         {
             this.Store = storeFile;
         }
 
-#if NET461
-        internal AuthenticationService(AuthenticationDetailsStoreDatabase storeDb)
-        {
-            this.Store = storeDb;
-        }
-#endif
-
         private IAuthenticationDetailsStore Store { get; }
 
-        public static string Md5Hash(string text)
+        internal static string Md5Hash(string text)
         {
             var md5 = MD5.Create();
 
@@ -56,9 +44,9 @@
                 return false;
             }
 
-            var hashedEmail = Md5Hash(email);
+            var hashedPassword = Md5Hash(password);
 
-            if (hashedEmail == user.Email)
+            if (hashedPassword == user.Password)
             {
                 return true;
             }
@@ -75,7 +63,7 @@
 
             if (this.Store.GetByEmail(email) != null)
             {
-                return;
+                throw new ArgumentException();
             }
 
             this.Store.Insert(new AuthenticationDetails { Email = email, Password = Md5Hash(password) });
