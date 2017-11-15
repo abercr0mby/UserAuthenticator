@@ -6,11 +6,18 @@
 
     public sealed class AuthenticationDetailsStoreDatabase : IAuthenticationDetailsStore
     {
-        private readonly AuthContext context = new AuthContext();
+        private AuthContext Context { get; set; }
+        private Type dependency = typeof(System.Data.Entity.SqlServer.SqlProviderServices);
+
+        public void Initialize()
+        {
+            this.Context = new AuthContext();
+            this.Context.Database.Initialize(false);
+        }
 
         public AuthenticationDetails GetByEmail(string email)
         {
-            return this.context.Set<AuthenticationDetailsEntity>()
+            return this.Context.Set<AuthenticationDetailsEntity>()
                 .Select(a => new AuthenticationDetails
                 {
                     Email = a.Email,
@@ -21,14 +28,14 @@
 
         public void Insert(AuthenticationDetails details)
         {
-            this.context.Set<AuthenticationDetailsEntity>().Add(
+            this.Context.Set<AuthenticationDetailsEntity>().Add(
                 new AuthenticationDetailsEntity
                 {
                     Id = Guid.NewGuid(),
                     Email = details.Email,
                     Password = details.Password
                 });
-            this.context.SaveChanges();
+            this.Context.SaveChanges();
         }
     }
 }

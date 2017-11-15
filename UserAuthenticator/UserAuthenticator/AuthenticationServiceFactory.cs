@@ -9,7 +9,7 @@ namespace UserAuthentication
 {
     public class AuthenticationServiceFactory
     {
-        public static AuthenticationService GetAuthenticationServiceFile(string path = @"C:\StoreFolder")
+        public static AuthenticationService GetAuthenticationServiceFile(string path = @"C:\StoreFolder\")
         {
             var fileStore = new AuthenticationDetailsStoreFile(path);
 
@@ -17,9 +17,10 @@ namespace UserAuthentication
         }
 
 #if NET461
-        public static AuthenticationService GetAuthenticationServiceDB()
+        public static AuthenticationService GetAuthenticationServiceDatabase()
         {
             var dbStore = new AuthenticationDetailsStoreDatabase();
+            dbStore.Initialize();
 
             return new AuthenticationService(dbStore);
         }
