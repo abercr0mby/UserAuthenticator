@@ -3,7 +3,9 @@
     using System;
     using System.Security.Cryptography;
     using System.Text;
+    using System.Text.RegularExpressions;
     using System.Threading.Tasks;
+    using UserAuthentication.Messages;
 
     public sealed class AuthenticationService
     {
@@ -45,7 +47,7 @@
 
             if (user == null)
             {
-                throw new Exception();
+                return false;
             }
 
             var hashedEmail = Md5Hash(email);
@@ -60,12 +62,38 @@
 
         public void Register(string email, string password)
         {
+            if (!this.IsEmailValid(email))
+            {
+                throw new ArgumentException();
+            }
+
             if (this.Store.GetByEmail(email) != null)
             {
                 return;
             }
 
             this.Store.Insert(new AuthenticationDetails { Email = email, Password = Md5Hash(password) });
+        }
+
+        public bool IsEmailValid(string email)
+        {
+            var invalid = false;
+            if (string.IsNullOrEmpty(email))
+            {
+                return false;
+            }
+
+            try
+            {
+                return Regex.IsMatch(email,
+                    @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" +
+                    @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$",
+                    RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
+            }
+            catch (RegexMatchTimeoutException)
+            {
+                return false;
+            }
         }
     }
 }

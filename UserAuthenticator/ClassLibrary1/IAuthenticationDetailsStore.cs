@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-
-namespace UserAuthentication
+﻿namespace UserAuthentication.Messages
 {
     public interface IAuthenticationDetailsStore
     {

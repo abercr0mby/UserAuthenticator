@@ -6,4 +6,9 @@
     <RootNamespace>UserAuthentication</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Messages.csproj" />
+    <ProjectReference Include="..\UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj" />
+  </ItemGroup>
+
 </Project>

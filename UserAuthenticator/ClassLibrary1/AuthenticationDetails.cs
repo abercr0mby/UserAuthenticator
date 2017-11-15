@@ -1,6 +1,6 @@
-﻿namespace UserAuthentication
+﻿namespace UserAuthentication.Messages
 {
-    public class AuthenticationDetails
+    public sealed class AuthenticationDetails
     {
         public string Email { get; set; }
 

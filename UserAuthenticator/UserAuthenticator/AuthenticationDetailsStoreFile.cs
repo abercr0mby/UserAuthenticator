@@ -2,6 +2,7 @@
 {
     using System.IO;
     using System.Text;
+    using UserAuthentication.Messages;
 
     public sealed class AuthenticationDetailsStoreFile : IAuthenticationDetailsStore
     {

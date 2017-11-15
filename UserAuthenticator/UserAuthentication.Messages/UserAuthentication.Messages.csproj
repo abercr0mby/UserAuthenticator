@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}</ProjectGuid>
+    <ProjectGuid>{EBFF8112-14B0-4C6C-B882-2A15F3EDDA81}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UserAuthentication.Store.Database</RootNamespace>
-    <AssemblyName>UserAuthentication.Store.Database</AssemblyName>
+    <RootNamespace>UserAuthentication.Messages</RootNamespace>
+    <AssemblyName>UserAuthentication.Messages</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,15 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticationDetailsStoreDB.cs" />
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Messages.csproj">
-      <Project>{d8513d86-d4ac-4da5-a850-f0df78d8158c}</Project>
-      <Name>UserAuthentication.Messages</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
