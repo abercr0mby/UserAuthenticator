@@ -10,7 +10,7 @@
     <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Messages.csproj" />
   </ItemGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' == 'NET461'">
+  <ItemGroup Condition="'$(TargetFramework)' == 'net461'">
     <ProjectReference Include="..\UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj" />
   </ItemGroup>
 

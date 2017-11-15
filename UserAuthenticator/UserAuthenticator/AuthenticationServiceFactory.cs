@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+#if NET461
+    using UserAuthentication.Store.Database;
+#endif
 
 namespace UserAuthentication
 {
@@ -16,7 +19,7 @@ namespace UserAuthentication
 #if NET461
         public static AuthenticationService GetAuthenticationServiceDB()
         {
-            var dbStore = new AuthenticationDetailsStoreDB();
+            var dbStore = new AuthenticationDetailsStoreDatabase();
 
             return new AuthenticationService(dbStore);
         }
