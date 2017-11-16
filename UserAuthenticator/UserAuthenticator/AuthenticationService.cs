@@ -1,13 +1,11 @@
 ﻿namespace UserAuthentication
 {
     using System;
-    using System.Security.Cryptography;
-    using System.Text;
-    using System.Text.RegularExpressions;
     using UserAuthentication.Core;
 
     public sealed class AuthenticationService
     {
+        // Instantiated through AuthenticationServiceFactory
         internal AuthenticationService(IAuthenticationDetailsStore storeFile)
         {
             this.Store = storeFile;
@@ -15,38 +13,24 @@
 
         private IAuthenticationDetailsStore Store { get; }
 
-        internal static string Md5Hash(string text)
-        {
-            var md5 = MD5.Create();
-
-            var result = md5.ComputeHash(Encoding.ASCII.GetBytes(text));
-
-            var stringBuilder = new StringBuilder();
-            foreach (var t in result)
-            {
-                stringBuilder.Append(t.ToString("x2"));
-            }
-
-            return stringBuilder.ToString();
-        }
-
-        public AuthenticationDetails GetRegisteredDetails(string email)
-        {
-            return this.Store.GetByEmail(email);
-        }
-
+        /// <summary>
+        ///     Checks supplied credentials against registered credentials
+        /// </summary>
+        /// <param name="email">A registered email address</param>
+        /// <param name="password">A registered password</param>
+        /// <returns>true if credentials match</returns>
         public bool Login(string email, string password)
         {
-            var user = this.Store.GetByEmail(email);
+            var registeredUser = this.Store.GetByEmail(email);
 
-            if (user == null)
+            if (registeredUser == null)
             {
                 return false;
             }
 
-            var hashedPassword = Md5Hash(password);
+            var hashedPassword = AuthenticationServiceHelper.Md5Hash(password);
 
-            if (hashedPassword == user.Password)
+            if (hashedPassword == registeredUser.Password)
             {
                 return true;
             }
@@ -54,36 +38,29 @@
             return false;
         }
 
+        /// <summary>
+        ///     Validates and persists registration details
+        /// </summary>
+        /// <param name="email">A valid email address</param>
+        /// <param name="password">Password</param>
         public void Register(string email, string password)
         {
-            if (!this.IsEmailValid(email))
+            if (!AuthenticationServiceHelper.IsEmailValid(email))
             {
-                throw new ArgumentException();
+                throw new ArgumentException("Email address is not valid");
             }
 
             if (this.Store.GetByEmail(email) != null)
             {
-                throw new ArgumentException();
+                throw new ArgumentException("This email address is already registered");
             }
 
-            this.Store.Insert(new AuthenticationDetails { Email = email, Password = Md5Hash(password) });
-        }
-
-        public bool IsEmailValid(string email)
-        {
-            if (string.IsNullOrEmpty(email))
-            {
-                return false;
-            }
-
-            try
-            {
-                return Regex.IsMatch(email, @"^(?("")("".+?(?<!\\)""@)|(([0-9a-z]((\.(?!\.))|[-!#\$%&'\*\+/=\?\^`\{\}\|~\w])*)(?<=[0-9a-z])@))" + @"(?(\[)(\[(\d{1,3}\.){3}\d{1,3}\])|(([0-9a-z][-\w]*[0-9a-z]*\.)+[a-z0-9][\-a-z0-9]{0,22}[a-z0-9]))$", RegexOptions.IgnoreCase, TimeSpan.FromMilliseconds(250));
-            }
-            catch (RegexMatchTimeoutException)
-            {
-                return false;
-            }
+            this.Store.Insert(
+                new AuthenticationDetails
+                {
+                    Email = email,
+                    Password = AuthenticationServiceHelper.Md5Hash(password)
+                });
         }
     }
 }

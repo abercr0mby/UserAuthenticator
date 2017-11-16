@@ -16,7 +16,11 @@ namespace UserAuthentication.Tests
         public void SetUp()
         {
             this.RawDetails = new AuthenticationDetails { Email = "a@b.com", Password = "let-me-in" };
-            this.HashedDetails = new AuthenticationDetails { Email = "a@b.com", Password = AuthenticationService.Md5Hash("let-me-in") };
+            this.HashedDetails = new AuthenticationDetails
+            {
+                Email = "a@b.com",
+                Password = AuthenticationServiceHelper.Md5Hash("let-me-in")
+            };
         }
 
         [TestMethod]

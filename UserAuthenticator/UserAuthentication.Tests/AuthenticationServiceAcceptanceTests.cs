@@ -18,7 +18,9 @@
             {
                 service.Register("name@email.com", "mypassword");
             }
-            catch (ArgumentException) { }
+            catch (ArgumentException)
+            {
+            }
 
             var loggedIn = service.Login("name@email.com", "mypassword");
 
@@ -38,7 +40,9 @@
             {
                 service.Register("name@email.com", "mypassword");
             }
-            catch (ArgumentException) { }
+            catch (ArgumentException)
+            {
+            }
 
             var loggedIn = service.Login("name@email.com", "mypassword");
 
