@@ -117,8 +117,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\UserAuthentication.Core.csproj">
-      <Project>{d8513d86-d4ac-4da5-a850-f0df78d8158c}</Project>
+    <ProjectReference Include="..\UserAuthentication.Core\UserAuthentication.Core.csproj">
+      <Project>{d74bb854-38c1-4159-bcd6-f942db399355}</Project>
       <Name>UserAuthentication.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\UserAuthenticator\UserAuthentication.csproj">
