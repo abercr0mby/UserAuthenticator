@@ -6,9 +6,9 @@
     public sealed class AuthenticationService
     {
         // Instantiated through AuthenticationServiceFactory
-        internal AuthenticationService(IAuthenticationDetailsStore storeFile)
+        internal AuthenticationService(IAuthenticationDetailsStore store)
         {
-            this.Store = storeFile;
+            this.Store = store;
         }
 
         private IAuthenticationDetailsStore Store { get; }
