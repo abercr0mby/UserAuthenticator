@@ -6,7 +6,7 @@ namespace UserAuthentication.Tests
     using UserAuthentication.Core;
 
     [TestClass]
-    public sealed class AuthenticationServiceTests
+    public sealed class AuthenticationServiceUnitTests
     {
         private AuthenticationDetails RawDetails { get; set; }
 
@@ -20,6 +20,7 @@ namespace UserAuthentication.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void AuthenticationService_LoginWithCorrectCredentials_Succeeds()
         {
             // Arrange
@@ -35,6 +36,7 @@ namespace UserAuthentication.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void AuthenticationService_LoginWithUnknownEmail_Fails()
         {
             // Arrange
@@ -51,6 +53,7 @@ namespace UserAuthentication.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void AuthenticationService_LoginWithWrongPassword_Fails()
         {
             // Arrange
@@ -66,6 +69,7 @@ namespace UserAuthentication.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         public void AuthenticationService_Register_Inserts()
         {
             // Arrange
@@ -82,6 +86,7 @@ namespace UserAuthentication.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         [ExpectedException(typeof(ArgumentException))]
         public void AuthenticationService_RegisterWithExistingEmail_Fails()
         {
@@ -98,6 +103,7 @@ namespace UserAuthentication.Tests
         }
 
         [TestMethod]
+        [TestCategory("Unit")]
         [ExpectedException(typeof(ArgumentException))]
         public void AuthenticationService_RegisterWithInvalidEmail_Fails()
         {
