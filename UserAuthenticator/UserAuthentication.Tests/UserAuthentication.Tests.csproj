@@ -121,8 +121,8 @@
       <Project>{d74bb854-38c1-4159-bcd6-f942db399355}</Project>
       <Name>UserAuthentication.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UserAuthenticator\UserAuthentication.csproj">
-      <Project>{19ae8485-7af9-4e29-8bdc-933f6ba1e63c}</Project>
+    <ProjectReference Include="..\UserAuthentication\UserAuthentication.csproj">
+      <Project>{1956fca2-f946-41bc-917b-e1d14c0d8e02}</Project>
       <Name>UserAuthentication</Name>
     </ProjectReference>
   </ItemGroup>

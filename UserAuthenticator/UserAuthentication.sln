@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2002
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication", "UserAuthenticator\UserAuthentication.csproj", "{19AE8485-7AF9-4E29-8BDC-933F6BA1E63C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Store.Database", "UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj", "{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Store.File", "UserAuthentication.Store.File\UserAuthentication.Store.File.csproj", "{3E16FC64-B738-40B0-ABF6-2C9A401242D5}"
@@ -13,16 +11,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication.Core", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAuthentication.Tests", "UserAuthentication.Tests\UserAuthentication.Tests.csproj", "{433BACEA-F14B-44DA-A814-E00FD1409ECD}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserAuthentication", "UserAuthentication\UserAuthentication.csproj", "{1956FCA2-F946-41BC-917B-E1D14C0D8E02}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{19AE8485-7AF9-4E29-8BDC-933F6BA1E63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19AE8485-7AF9-4E29-8BDC-933F6BA1E63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19AE8485-7AF9-4E29-8BDC-933F6BA1E63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19AE8485-7AF9-4E29-8BDC-933F6BA1E63C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60F4A72B-C2D2-45B4-A491-0D0A8F2E9B37}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,6 +35,10 @@ Global
 		{433BACEA-F14B-44DA-A814-E00FD1409ECD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{433BACEA-F14B-44DA-A814-E00FD1409ECD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{433BACEA-F14B-44DA-A814-E00FD1409ECD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1956FCA2-F946-41BC-917B-E1D14C0D8E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1956FCA2-F946-41BC-917B-E1D14C0D8E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1956FCA2-F946-41BC-917B-E1D14C0D8E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1956FCA2-F946-41BC-917B-E1D14C0D8E02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
