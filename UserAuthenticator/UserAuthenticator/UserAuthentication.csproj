@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\UserAuthentication.Core\UserAuthentication.Core.csproj" />
-    <ProjectReference Include="..\UserAuthentication.Store.Database\UserAuthentication.Store.Database.csproj" />
     <ProjectReference Include="..\UserAuthentication.Store.File\UserAuthentication.Store.File.csproj" />
   </ItemGroup>
 
